@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0000_changelog_create_table_player.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0000_changelog_create_table_player_1">
+        <createTable tableName="PLAYER">
+            <column name="PLAYERID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+            <column name="FIRSTNAME" type="VARCHAR2(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="LASTNAME" type="VARCHAR2(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SHIRTNAME" type="VARCHAR2(2000)" />
+            <column name="SHIRTNUMBER" type="NUMBER(19, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BIRTHDAY" type="TIMESTAMP(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CLUBID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0000_changelog_create_table_player_2">
+        <addPrimaryKey columnNames="PLAYERID" constraintName="PK_PLAYER_1" tableName="PLAYER"/>
+    </changeSet>
+    <!--<changeSet author="anas.elfadel" id="2022_00_00_0000_changelog_create_table_player_3">
+        <addForeignKeyConstraint baseColumnNames="CLUBID" baseTableName="PLAYER" constraintName="FK_PLAYER_CLUB_1" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="PLAYER" referencedTableName="CLUB"/>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0000_changelog_create_table_player_4">
+        <addForeignKeyConstraint baseColumnNames="CURRENTSQUADID" baseTableName="PLAYER" constraintName="FK_PLAYER_CSQUAD_1" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="PLAYER" referencedTableName="SQUAD"/>
+    </changeSet>-->
+</databaseChangeLog>

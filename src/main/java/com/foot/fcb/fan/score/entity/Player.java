@@ -21,28 +21,31 @@ import javax.persistence.OneToOne;
 public class Player {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long playerID;
 
-	@Column(nullable = false)
+	@Column(name = "FIRSTNAME", nullable = false)
 	private String firstName;
 
-	@Column(nullable = false)
+	@Column(name = "LASTNAME", nullable = false)
 	private String lastName;
 
-	@Column(nullable = false)
+	@Column(name = "SHIRTNAME", nullable = false)
 	private String shirtName;
 
-	@Column(nullable = false)
+	@Column(name = "SHIRTNUMBER", nullable = false)
 	private int shirtNumber;
 
-	@Column(nullable = false)
+	@Column(name = "BIRTHDAY", nullable = false)
 	private LocalDate birthday;
 
 	@ElementCollection(targetClass=String.class)
 	private List<String> nickNames;
+/*
 
+	@Column(name = "IMAGEPATH")
 	private String imagePath;
+*/
 
 	@ManyToMany
 	@JoinTable(name = "SquadPlayer",
@@ -54,9 +57,79 @@ public class Player {
 	@JoinColumn(name = "CLUBID")
 	private Club club;
 
-	@OneToOne
+/*	@OneToOne
 	@JoinColumn(name = "CURRENTSQUADID")
-	private Squad currentSquad;
+	private Squad currentSquad;*/
 
+	public Long getPlayerID() {
+		return playerID;
+	}
 
+	public void setPlayerID(final Long playerID) {
+		this.playerID = playerID;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(final String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(final String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getShirtName() {
+		return shirtName;
+	}
+
+	public void setShirtName(final String shirtName) {
+		this.shirtName = shirtName;
+	}
+
+	public int getShirtNumber() {
+		return shirtNumber;
+	}
+
+	public void setShirtNumber(final int shirtNumber) {
+		this.shirtNumber = shirtNumber;
+	}
+
+	public LocalDate getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(final LocalDate birthday) {
+		this.birthday = birthday;
+	}
+
+	public List<String> getNickNames() {
+		return nickNames;
+	}
+
+	public void setNickNames(final List<String> nickNames) {
+		this.nickNames = nickNames;
+	}
+
+	public Set<Squad> getSquads() {
+		return squads;
+	}
+
+	public void setSquads(final Set<Squad> squads) {
+		this.squads = squads;
+	}
+
+	public Club getClub() {
+		return club;
+	}
+
+	public void setClub(final Club club) {
+		this.club = club;
+	}
 }

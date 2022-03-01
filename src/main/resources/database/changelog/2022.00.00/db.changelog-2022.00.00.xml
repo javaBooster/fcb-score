@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" logicalFilePath="2022.00.00/db.changelog-2022.00.00.xml" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <include file="feature/0000_changelog_create_table_player.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0000_changelog_create_table_club.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0001_cangelog_add_auto_increment_player.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0002_cangelog_add_auto_increment_club.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0003_changelog_remove_club.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
