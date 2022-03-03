@@ -7,27 +7,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Squad {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long squadID;
-
-	@Column(nullable = false)
-	private String name;
-
-	@Column(nullable = false)
-	private int createYear;
-
-	private String imagePath;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CLUBID")
@@ -39,5 +30,35 @@ public class Squad {
 	@ManyToMany
 	private Set<SoccerGroup> soccerGroups;
 
+	public Long getSquadID() {
+		return squadID;
+	}
 
+	public void setSquadID(final Long squadID) {
+		this.squadID = squadID;
+	}
+
+	public Club getClub() {
+		return club;
+	}
+
+	public void setClub(final Club club) {
+		this.club = club;
+	}
+
+	public Set<Player> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(final Set<Player> players) {
+		this.players = players;
+	}
+
+	public Set<SoccerGroup> getSoccerGroups() {
+		return soccerGroups;
+	}
+
+	public void setSoccerGroups(final Set<SoccerGroup> soccerGroups) {
+		this.soccerGroups = soccerGroups;
+	}
 }

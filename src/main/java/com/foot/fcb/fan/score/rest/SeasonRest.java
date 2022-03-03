@@ -1,7 +1,5 @@
 package com.foot.fcb.fan.score.rest;
 
-import java.time.LocalDate;
-
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,27 +9,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.foot.fcb.fan.score.dao.ClubDAO;
-import com.foot.fcb.fan.score.entity.Club;
-import com.foot.fcb.fan.score.entity.Player;
 import com.foot.fcb.fan.score.entity.Season;
-import com.foot.fcb.fan.score.service.ClubBP;
+import com.foot.fcb.fan.score.service.SeasonBP;
 
 @RestController
-@RequestMapping("club")
-public class ClubRest {
+@RequestMapping("season")
+public class SeasonRest {
 
 	@Autowired
-	private ClubBP clubBP;
+	private SeasonBP seasonBP;
 
 	@GetMapping("/{id}")
-	public Club getClub(@PathParam("id") Long id){
-		return clubBP.findAny();
+	public Season getSeason(@PathParam("id") Long id){
+		return seasonBP.getSeason(id);
 	}
 
-	@PostMapping("/create")
-	public Club addPlayer(@RequestBody Club club){
-		return clubBP.insert(club);
+	@PostMapping(path= "/create", consumes = "application/json")
+	public Season create(@RequestBody final Season season){
+		return seasonBP.save(season);
 	}
-
 }

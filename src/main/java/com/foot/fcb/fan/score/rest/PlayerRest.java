@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,17 +37,8 @@ public class PlayerRest {
 		return player;
 	}
 
-	@PostMapping("/")
-	public Player addPlayer(){
-		Player player = new Player();
-		player.setFirstName("adil");
-		player.setLastName("meyete");
-		player.setShirtName("adilokov");
-		player.setShirtNumber(15);
-		player.setBirthday(LocalDate.now());
-		player.setPlayerID(1l);
-		player.setClub(clubBP.findAny());
-
+	@PostMapping("/create")
+	public Player addPlayer(@RequestBody Player player){
 		return playerBP.insert(player);
 	}
 

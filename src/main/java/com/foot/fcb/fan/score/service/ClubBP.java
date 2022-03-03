@@ -19,6 +19,10 @@ public class ClubBP {
 		return clubDAO.save(club);
 	}
 
+	public Club findByID(final Long id){
+		return clubDAO.findById(id).get();
+	}
+
 	public Club findAny(){
 		List<Club> list = new ArrayList<>();
 		clubDAO.findAll().forEach(list::add);

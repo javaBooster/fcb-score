@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0005_changelog_create_table_competition.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0005_changelog_create_table_competition_1">
+        <createTable tableName="COMPETITION">
+            <column name="COMPETITIONID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+            <column name="NAME" type="VARCHAR2(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0005_changelog_create_table_competition_2">
+        <addPrimaryKey columnNames="COMPETITIONID" constraintName="PK_COMPETITION_1" tableName="COMPETITION"/>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0005_changelog_create_table_competition_3">
+        <addAutoIncrement columnDataType="int"
+                          columnName="COMPETITIONID"
+                          incrementBy="1"
+                          startWith="1"
+                          tableName="COMPETITION"/>
+    </changeSet>
+</databaseChangeLog>

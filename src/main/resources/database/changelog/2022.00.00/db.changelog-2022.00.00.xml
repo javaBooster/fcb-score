@@ -5,4 +5,7 @@
     <include file="feature/0001_cangelog_add_auto_increment_player.xml" relativeToChangelogFile="true"/>
     <include file="feature/0002_cangelog_add_auto_increment_club.xml" relativeToChangelogFile="true"/>
     <include file="feature/0003_changelog_remove_club.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0004_changelog_create_table_season.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0005_changelog_create_table_competition.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0006_changelog_create_table_squad.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
