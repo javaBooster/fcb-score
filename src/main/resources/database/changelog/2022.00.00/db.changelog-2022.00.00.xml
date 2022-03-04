@@ -8,4 +8,7 @@
     <include file="feature/0004_changelog_create_table_season.xml" relativeToChangelogFile="true"/>
     <include file="feature/0005_changelog_create_table_competition.xml" relativeToChangelogFile="true"/>
     <include file="feature/0006_changelog_create_table_squad.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0007_changelog_create_table_player_nicknames.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0008_changelog_rename_column_nickname.xml" relativeToChangelogFile="true"/>
+    <include file="feature/0009_changelog_create_table_squadplayer.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

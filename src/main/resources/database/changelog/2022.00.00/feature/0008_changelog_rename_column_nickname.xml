@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0008_changelog_rename_column_nickname.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0008_changelog_rename_column_nickname_1">
+            <renameColumn  columnDataType="VARCHAR2(255)"
+                           newColumnName="NICKNAME"
+                           oldColumnName="NICKNAMES"
+                           tableName="NICKNAMESPLAYER"/>
+    </changeSet>
+</databaseChangeLog>

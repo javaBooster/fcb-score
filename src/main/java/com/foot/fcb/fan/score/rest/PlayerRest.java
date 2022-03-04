@@ -37,7 +37,7 @@ public class PlayerRest {
 		return player;
 	}
 
-	@PostMapping("/create")
+	@PostMapping(path= "/create", consumes = "application/json")
 	public Player addPlayer(@RequestBody Player player){
 		return playerBP.insert(player);
 	}

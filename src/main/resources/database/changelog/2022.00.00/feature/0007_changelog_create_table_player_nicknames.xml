@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0007_changelog_create_table_player_nicknames.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0007_changelog_create_table_player_nicknames_1">
+        <createTable tableName="NICKNAMESPLAYER">
+            <column name="NICKNAMES" type="VARCHAR2(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PLAYERID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+            <column name="ID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0007_changelog_create_table_player_nicknames_2">
+        <addPrimaryKey columnNames="ID" constraintName="PK_NICKNAMEPL_1" tableName="NICKNAMESPLAYER"/>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0007_changelog_create_table_player_nicknames_3">
+        <addAutoIncrement columnDataType="int"
+                          columnName="ID"
+                          incrementBy="1"
+                          startWith="1"
+                          tableName="NICKNAMESPLAYER"/>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0000_changelog_create_table_club_3">
+        <addForeignKeyConstraint baseColumnNames="PLAYERID" baseTableName="NICKNAMESPLAYER" constraintName="FK_NCKPL_PLAYER_1" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="PLAYERID" referencedTableName="PLAYER"/>
+    </changeSet>
+</databaseChangeLog>

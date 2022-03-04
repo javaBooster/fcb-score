@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -40,6 +41,8 @@ public class Player {
 	private LocalDate birthday;
 
 	@ElementCollection(targetClass=String.class)
+	@CollectionTable(name = "NICKNAMESPLAYER", joinColumns = @JoinColumn(name = "PLAYERID"))
+	@Column(name = "NICKNAME")
 	private List<String> nickNames;
 /*
 
@@ -48,7 +51,7 @@ public class Player {
 */
 
 	@ManyToMany
-	@JoinTable(name = "SquadPlayer",
+	@JoinTable(name = "SQUADPLAYER",
 			joinColumns = @JoinColumn(name = "PLAYERID"),
 			inverseJoinColumns = @JoinColumn(name = "SQUADID"))
 	private Set<Squad> squads;
