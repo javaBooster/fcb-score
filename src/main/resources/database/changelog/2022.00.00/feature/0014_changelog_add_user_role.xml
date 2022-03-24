@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0014_changelog_add_user_role.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0014_changelog_add_user_role_1">
+        <createTable tableName="USER_ROLES">
+            <column name="ROLEID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+            <column name="USERID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0014_changelog_add_user_role_2">
+        <addPrimaryKey columnNames="USERID,ROLEID" constraintName="PK_USER_ROLE_1" tableName="USER_ROLES"/>
+    </changeSet>
+</databaseChangeLog>

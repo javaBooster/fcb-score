@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0011_changelog_create_table_role.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0011_changelog_create_table_role_1">
+        <createTable tableName="ROLE">
+            <column name="ROLEID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+            <column name="NAME" type="VARCHAR2(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0011_changelog_create_table_role_2">
+        <addPrimaryKey columnNames="ROLEID" constraintName="PK_ROLE_1" tableName="ROLE"/>
+    </changeSet>
+</databaseChangeLog>

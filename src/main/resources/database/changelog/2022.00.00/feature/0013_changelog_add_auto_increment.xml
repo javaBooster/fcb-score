@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0013_changelog_add_auto_increment.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0013_changelog_add_auto_increment_1">
+        <addAutoIncrement columnDataType="int"
+                          columnName="USERID"
+                          incrementBy="1"
+                          startWith="1"
+                          tableName="USERAPP"/>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0013_changelog_add_auto_increment_2">
+        <addAutoIncrement columnDataType="int"
+                          columnName="ROLEID"
+                          incrementBy="1"
+                          startWith="1"
+                          tableName="ROLE"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog logicalFilePath="2022.00.00/feature/0010_changelog_create_table_user.xml"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="anas.elfadel" id="2022_00_00_0010_changelog_create_table_user_1">
+        <createTable tableName="USERAPP">
+            <column name="USERID" type="NUMBER(19, 0)">
+                <constraints nullable="false" />
+            </column>
+            <column name="USERNAME" type="VARCHAR2(255)"/>
+            <column name="EMAIL" type="VARCHAR2(255)"/>
+            <column name="PASSWORD" type="VARCHAR2(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="anas.elfadel" id="2022_00_00_0010_changelog_create_table_user_2">
+        <addPrimaryKey columnNames="USERID" constraintName="PK_USER_1" tableName="USERAPP"/>
+    </changeSet>
+</databaseChangeLog>
